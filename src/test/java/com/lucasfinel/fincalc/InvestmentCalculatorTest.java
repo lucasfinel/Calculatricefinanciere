@@ -12,3 +12,4 @@ public class InvestmentCalculatorTest {
         assertTrue(fv > 0);
     }
 }
+// This method calculates
