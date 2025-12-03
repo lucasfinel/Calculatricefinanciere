@@ -1,13 +1,37 @@
 # Financial Calculator
-Pour les dependencies on utilise common math3 et janit jupiter. Le premier permet les calcul comme les taux d'annuité.
-Le deuxième permet de faire des tests unitaires.
-Pour la compilation maven s'occupe de tout.
-La gestion du projet est gérée par Maven via le champ version
-On obtient le packaging grace a mvn clean package
-Grace au plugin maven shade plugin on obtient un jar executable avec toutes les dependencies.
 
-On construit le projet grace à mvn clean package
-Cela nous permet de telecharger les dépendances et de compiler notre code et les tests.
-Maven compile et exécute tes tests JUnit (LoanCalculatorTest, InvestmentCalculatorTest).
-Pour run l'application on utilise java -jar target/financial-calculator-0.1.0.jar
-A partir de la tu as le choix entre deux choses, soit la mensualité d'un pret soit la future valeur d'un investissement.
+This project is a Java-based financial calculator that allows the user to:
+- Compute the monthly payment of a loan.
+- Compute the future value of an investment.
+
+It is built using Maven, with proper dependency management, automated testing, and packaging into an executable JAR file.
+
+---
+
+## Dependencies
+
+The project uses two main dependencies:
+
+### Apache Commons Math3
+Used for mathematical computations such as annuity rates and financial formulas.
+
+### JUnit Jupiter
+Used to implement and run unit tests.
+
+All dependencies are automatically downloaded and managed through the `pom.xml` file.
+
+---
+
+## Project Build and Structure
+
+Maven handles the following:
+- Dependency resolution
+- Compilation
+- Execution of tests
+- Versioning (via the `<version>` field in `pom.xml`)
+- Packaging using the Maven Shade Plugin to produce a self-contained executable JAR
+
+To build the project, run:
+
+```bash
+mvn clean package

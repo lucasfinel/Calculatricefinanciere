@@ -3,11 +3,25 @@ package com.lucasfinel.fincalc;
 import org.apache.commons.math3.util.FastMath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+/**
+ * Classe qui permet de calculer la mensualité d'un prêt.
+ */
 public class LoanCalculator {
 
     private static final Logger logger = LoggerFactory.getLogger(LoanCalculator.class);
-
+    /**
+     * Calcule la mensualité d'un prêt à partir du capital, du taux annuel
+     * et de la durée en années.
+     *
+     * Si le taux est nul, le calcul se limite à diviser le capital
+     * par le nombre total de mensualités.
+     *
+     * @param principal montant emprunté
+     * @param annualRate taux annuel en décimal (ex : 0.05 pour 5 %)
+     * @param years durée du prêt en années
+     * @return la mensualité
+     * @throws IllegalArgumentException si la durée est inférieure ou égale à 0
+     */
     public double monthlyPayment(double principal, double annualRate, int years) {
 
         logger.info("Starting monthly payment computation");

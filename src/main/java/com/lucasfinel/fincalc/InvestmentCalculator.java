@@ -3,11 +3,26 @@ package com.lucasfinel.fincalc;
 import org.apache.commons.math3.util.FastMath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+/**
+ * Classe qui permet de calculer la valeur future d'un investissement
+ * avec des versements mensuels.
+ */
 public class InvestmentCalculator {
 
     private static final Logger logger = LoggerFactory.getLogger(InvestmentCalculator.class);
-
+    /**
+     * Calcule la valeur future d'un investissement basé sur un versement mensuel,
+     * un taux annuel et une durée en années.
+     *
+     * Si le taux annuel est nul, la valeur future correspond simplement
+     * au total des versements effectués.
+     *
+     * @param monthlyContribution montant versé chaque mois
+     * @param annualRate taux annuel en décimal (ex : 0.05 pour 5 %)
+     * @param years durée de l'investissement en années
+     * @return la valeur future de l'investissement
+     * @throws IllegalArgumentException si la durée est inférieure ou égale à 0
+     */
     public double futureValue(double monthlyContribution, double annualRate, int years) {
 
         logger.info("Starting future value computation");
